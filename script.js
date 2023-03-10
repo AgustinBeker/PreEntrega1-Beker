@@ -12,6 +12,8 @@ let hamburguesacuadruple = "Hamburguesa Cuadruple"
 let precioHamburguesaCuadruple = 1500
 let mensajeHamburguesas = ""
 let mensajeEntregas = ""
+let Hamburguesa = ""
+let contacto = ""
 
 function preguntaOtroHamburguesas() {
     let n = prompt(`¿Te gustaría agregar otra hamburguesas?
@@ -44,10 +46,17 @@ function alertaCase (tipoHamburguesa, precioHamburguesa) {
 function otraHamburguesa() {
     cuentaTotal = 0
     cantidadhamburguesas = 0
-    let Hamburguesa = prompt(`Dejanos aquí tu Hamburguesa:`)
-    let contactoOtraHamburguesa = prompt(`Ingresá tu email o telefono:`)
+    do{
+    let input = prompt(`Dejanos aquí tu Hamburguesa:`)
+    Hamburguesa=input;
+    }while( Hamburguesa == null || Hamburguesa.length == 0 || /^\s+$/.test(Hamburguesa) ) 
+    
+    do{
+    let input = prompt(`Ingresá tu email o telefono:`)
+    contacto=input;
+}while( contacto == null || contacto.length == 0) 
     alert(`Muchas gracias ${nombre}.
-    Nos comunicaremos en breve contigo a: ${contactoOtraHamburguesa}.
+    Nos comunicaremos en breve contigo a: ${contacto}.
     Por la Hamburguesa:
     ${Hamburguesa}`)
 }
